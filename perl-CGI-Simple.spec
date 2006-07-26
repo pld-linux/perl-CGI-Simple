@@ -5,7 +5,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	CGI
 %define	pnam	Simple
-Summary:	Test::Simple - Basic utilities for writing tests
+Summary:	CGI::Simple - a Simple totally OO CGI interface that is CGI.pm compliant
+Summary(pl):	CGI::Simple - prosty, zorientowany obiektowo interfejs CGI zgodny z CGI.pm
 Name:		perl-CGI-Simple
 Version:	0.077
 Release:	1
@@ -21,10 +22,19 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is an extremely simple, extremely basic module for writing tests
-suitable for CPAN modules and other pursuits. If you wish to do more
-complicated testing, use the Test::More module (a drop-in replacement
-for this one).
+CGI::Simple provides a relatively lightweight drop in replacement for
+CGI.pm. It shares an identical OO interface to CGI.pm for parameter
+parsing, file upload, cookie handling and header generation. This
+module is entirely object oriented, however a complete functional
+interface is available by using the CGI::Simple::Standard module.
+
+%description -l pl
+CGI::Simple udostêpnia w miarê lekki zamiennik CGI.pm. Wspó³dzieli z
+CGI.pm identyczny zorientowany obiektowo interfejs do analizy
+parametrów, przesy³ania plików, obs³ugi ciasteczek i generowania
+nag³ówków. Ten modu³ jest w pe³ni zorientowany obiektowo, ale z
+pe³nym interfejsem funkcyjnym dostêpnym poprzez modu³
+CGI::Simple::Standard.
 
 %prep
 %setup -q -n Cgi-%{pnam}-%{version}
