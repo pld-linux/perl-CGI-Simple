@@ -6,7 +6,7 @@
 %define	pdir	CGI
 %define	pnam	Simple
 Summary:	CGI::Simple - a Simple totally OO CGI interface that is CGI.pm compliant
-Summary(pl):	CGI::Simple - prosty, zorientowany obiektowo interfejs CGI zgodny z CGI.pm
+Summary(pl.UTF-8):   CGI::Simple - prosty, zorientowany obiektowo interfejs CGI zgodny z CGI.pm
 Name:		perl-CGI-Simple
 Version:	0.077
 Release:	1
@@ -28,12 +28,12 @@ parsing, file upload, cookie handling and header generation. This
 module is entirely object oriented, however a complete functional
 interface is available by using the CGI::Simple::Standard module.
 
-%description -l pl
-CGI::Simple udostÍpnia w miarÍ lekki zamiennik CGI.pm. WspÛ≥dzieli z
+%description -l pl.UTF-8
+CGI::Simple udostƒôpnia w miarƒô lekki zamiennik CGI.pm. Wsp√≥≈Çdzieli z
 CGI.pm identyczny zorientowany obiektowo interfejs do analizy
-parametrÛw, przesy≥ania plikÛw, obs≥ugi ciasteczek i generowania
-nag≥ÛwkÛw. Ten modu≥ jest w pe≥ni zorientowany obiektowo, ale z
-pe≥nym interfejsem funkcyjnym dostÍpnym poprzez modu≥
+parametr√≥w, przesy≈Çania plik√≥w, obs≈Çugi ciasteczek i generowania
+nag≈Ç√≥wk√≥w. Ten modu≈Ç jest w pe≈Çni zorientowany obiektowo, ale z
+pe≈Çnym interfejsem funkcyjnym dostƒôpnym poprzez modu≈Ç
 CGI::Simple::Standard.
 
 %prep
