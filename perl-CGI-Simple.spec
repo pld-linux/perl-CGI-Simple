@@ -8,16 +8,20 @@
 Summary:	CGI::Simple - a Simple totally OO CGI interface that is CGI.pm compliant
 Summary(pl.UTF-8):	CGI::Simple - prosty, zorientowany obiektowo interfejs CGI zgodny z CGI.pm
 Name:		perl-CGI-Simple
-Version:	0.077
-Release:	2
+Version:	1.113
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/J/JF/JFREEMAN/Cgi-Simple-%{version}.tar.gz
-# Source0-md5:	5b947fe84b30a2c8ed050550f73b39a9
+Source0:	http://www.cpan.org/modules/by-module/CGI/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	50c50dbec87b822e3f2285e41cb23519
 URL:		http://search.cpan.org/dist/Cgi-Simple/
+BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
+BuildRequires:	perl-IO-stringy
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -37,20 +41,21 @@ pełnym interfejsem funkcyjnym dostępnym poprzez moduł
 CGI::Simple::Standard.
 
 %prep
-%setup -q -n Cgi-%{pnam}-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
+#setup -q -n Cgi-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make}
+%{__perl} Build.PL \
+	destdir=$RPM_BUILD_ROOT \
+	installdirs=vendor
+./Build
 
-%{?with_tests:%{__make} test}
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+./Build install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
