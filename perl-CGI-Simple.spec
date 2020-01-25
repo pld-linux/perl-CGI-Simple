@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	CGI
 %define	pnam	Simple
 Summary:	CGI::Simple - a Simple totally OO CGI interface that is CGI.pm compliant
