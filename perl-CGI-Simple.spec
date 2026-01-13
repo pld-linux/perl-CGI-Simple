@@ -8,7 +8,7 @@ Summary:	CGI::Simple - a Simple totally OO CGI interface that is CGI.pm complian
 Summary(pl.UTF-8):	CGI::Simple - prosty, zorientowany obiektowo interfejs CGI zgodny z CGI.pm
 Name:		perl-CGI-Simple
 Version:	1.113
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
